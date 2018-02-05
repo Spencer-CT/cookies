@@ -11,9 +11,9 @@ const pSquare = {
 };
 
 const powells = {
-min: '11',
-max: '38',
-avg: '1.7'
+    min: '11',
+    max: '38',
+    avg: '1.7'
 };
 
 const stJohns = {
@@ -30,3 +30,10 @@ const waterfront = {
 
 
 
+function getRandomIntInclusive(a, b) {
+    a = Math.ceil(a);
+    b = Math.floor(b);
+    return Math.floor(Math.random() * (b - a + 1)) + a; 
+  }
+
+  getRandomIntInclusive(2, 16);
