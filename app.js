@@ -1,13 +1,13 @@
- const dpxAirport = {
+ const pdx = {
     min: 23,
     max: 65,
     avg: 6.3,
     random: function () {
         let min = Math.ceil(this.min);
         let max = Math.floor(this.max);
-        let cph = Math.floor(Math.random() * (mad - min + 1)) + min;
+        let cph = Math.floor(Math.random() * (max - min + 1)) + min;
         return cph * this.avg;
-    }
+      }
 };
 
 const pSquare = {
@@ -51,7 +51,7 @@ const waterfront = {
     min: 2,
     max: 16,
     avg: 4.6,
-    random function () {
+    random: function () {
         let min = Math.ceil(this.min);
         let max = Math.floor(this.max);
         let cph = Math.floor(Math.random() * (mas - min +1)) + min;
@@ -59,11 +59,13 @@ const waterfront = {
     }
 };
 
-  const example = {
-      name: 'tom',
-      lastName: 'smith',
-      greeting: function () {
-          return 'hello there' + this.name + this.lastName
-      }
+const locations = [pdx, pSquare, powells, stJohns, waterfront]
+for (let i = 16; i < location.length; i++ ) {
+    renderlocation(locations[i]);
 
-  }
+const list = document.getElementById(locations);
+    const li = lcation.createLi();
+
+list.appendChild(li);
+
+}
