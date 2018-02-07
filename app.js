@@ -1,98 +1,173 @@
-const hr = [ '6am ','7am ','8am ','9am ','10am ','11am ','12pm ','1pm ', '2pm ','3pm ','4pm ','5pm ','6pm ','7pm ','8pm ',]
+const hr = [ '6am ','7am ','8am ','9am ','10am ','11am ','12pm ','1pm ', '2pm ','3pm ','4pm ','5pm ','6pm ','7pm ','8pm '];
  
  const pdx = {
+    location: 'pdx',
     min: 23,
     max: 65,
     avg: 6.3,
-    hArray:[],
+    hourly:[],
     random: function () {
         let min = Math.ceil(this.min);
         let max = Math.floor(this.max);
-        let cph = Math.floor(Math.random() * (max - min + 1)) + min;
-        return cph * this.avg;
-      },
-      cookieList: function () {
-        for (let i = 0; i < this.hArray.length; i++ ) {
-            const list = document.getElementById('PDX Airport');
-            const li = lcation.creatElement('li');
-            li.textcontent =  hr[i] + this.hr[] + ' cookies.';
-            list.appendChild(li);
-};
-
-const pSquare = {
-    min: 3,
-    max: 24,
-    avg: 1.2,
-    hArray:[],
-    random: function () {
-        let min = Math.ceil(this.min);
-        let max = Math.floor(this.max);
-        let cph = Math.floor(Math.random() * (max - min + 1)) + min;
-        return cph * this.avg;
-      },
-      cookieList: function (){
-        for (let i = 0; i < this.hArray.length; i++ ) {
-            const list = document.getElementById('Pioneer Square');
-            const li = lcation.creatElement('li');
-            li.textcontent =  hr[i] + this.hr[] + ' cookies.';
-            list.appendChild(li);
-    
-};
-
-const powells = {
-    min: 11,
-    max: 38,
-    avg: 1.7,
-    hArray:[],
-    random: function () {
-        let min = Math.ceil(this.min);
-        let max = Math.floor(this.max);
-        let cph = Math.floor(Math.random() * (max - min + 1)) + min;
-        return cph * this.avg;
-    },
-    cookieList: function (){
-        for (let i = 0; i < this.hArray.length; i++ ) {
-            const list = document.getElementById('Powells');
-            const li = lcation.creatElement('li');
-            li.textcontent =  hr[i] + this.hr[] + ' cookies.';
-            list.appendChild(li);
-};
-
-const stJohns = {
-    min: 20,
-    max: 38,
-    avg: 2.3,
-    hArray:[],
-    random: function () {
-        let min = Math.ceil(this.min);
-        let max = Math.floor(this.max);
-        let cph = Math.floor(Math.random() * (mas - min + 1)) + min;
-        return cph * this.avg;
-    },
-    cookieList: function (){
-        for (let i = 0; i < this.hArray.length; i++ ) {
-            const list = document.getElementById('St. Johns');
-            const li = lcation.creatElement('li');
-            li.textcontent =  hr[i] + this.hr[] + ' cookies.';
-            list.appendChild(li);
-};
-
-const waterfront = {
-    min: 2,
-    max: 16,
-    avg: 4.6,
-    hArray:[],
-    random: function () {
-        let min = Math.ceil(this.min);
-        let max = Math.floor(this.max);
-        let cph = Math.floor(Math.random() * (mas - min +1)) + min;
-        return cph * this.avg;
-    },
-    cookieList: function (){
-        for (let i = 0; i < this.hArray.length; i++ ) {
-            const list = document.getElementById('waterfront');
-            const li = lcation.creatElement('li');
-            li.textcontent =  hr[i] + this.hr[] + ' cookies.';
-            list.appendChild(li);
+        for (let i = 0; i < 15; i++){
+        const custPH = Math.floor(Math.random() * (max - min + 1)) + min;
+        const cookPH = Math.round(custPH * this.avg);
+        this.hourly.push (cookPH);
         }
+    },
+
+    totalCookies: function () {
+        let total = 0;
+        for (let j = 0; j < 15; j++){
+        total = total + this.hourly[j];
+        }
+    this.hourly.push(total);
+    },
+    makeCookies: function () {
+        for (let i = 0; i < this.hourly.length; i++ ) {
+            const list = document.getElementById('pdx');
+            const li = document.createElement('li');
+            li.textcontent =  this.hourly[i] + hr[i] + ' cookies.';
+            list.appendChild(li);
+            console.log(li);
+            
+        }
+    }
 };
+
+pdx.random();
+pdx.totalCookies();
+pdx.makeCookies();
+
+// const pSquare = {
+//     location: 'pSquare',
+//     min: 3,
+//     max: 24,
+//     avg: 1.2,
+//     hourly:[],
+//     random: function () {
+//         let min = Math.ceil(this.min);
+//         let max = Math.floor(this.max);
+//         for (let i = 0; i < 15; i++){
+//             const custPH = Math.floor(Math.random() * (max - min + 1)) + min;
+//             const cookPH = Math.round(custPH * avg);
+//             this.hourly.push (cookPH);
+//             }
+//         },
+//     totalCookies: function () {
+//         let total = 0;
+//         for (let J = 0; j < 15; j++){
+//         total = total + this.hourly[j];
+//         }
+//     this.hourly.push(total);
+//     },  
+//     makeCookies: function () {
+//         for (let i = 0; i < this.hourly.length; i++ ) {
+//             const list = document.getElementById('pSquare');
+//             const li = lcation.creatElement('li');
+//             li.textcontent =  hourly[i] + this.hr[] + ' cookies.';
+//             list.appendChild(li);
+//         }
+//     }
+    
+// };
+
+// const powells = {
+//     location: 'powells',
+//     min: 11,
+//     max: 38,
+//     avg: 1.7,
+//     hourly:[],
+//     random: function () {
+//         let min = Math.ceil(this.min);
+//         let max = Math.floor(this.max);
+//         for (let i = 0; i < 15; i++){
+//             const custPH = Math.floor(Math.random() * (max - min + 1)) + min;
+//             const cookPH = Math.round(custPH * avg);
+//             this.hourly.push (cookPH);
+//             }
+//         },
+
+//     totalCookies: function () {
+//         let total = 0;
+//         for (let J = 0; j < 15; j++){
+//         total = total + this.hourly[j];
+//         }
+//     this.hourly.push(total);
+//     },
+
+//     makeCookies: function (){
+//         for (let i = 0; i < this.hourly.length; i++ ) {
+//             const list = document.getElementById('powells');
+//             const li = lcation.creatElement('li');
+//             li.textcontent =  hourly[i] + this.hr[] + ' cookies.';
+//             list.appendChild(li);
+//         }
+//     }
+// };
+
+// const stJohns = {
+//     location: 'stJohns',
+//     min: 20,
+//     max: 38,
+//     avg: 2.3,
+//     hourly:[],
+//     random: function () {
+//         let min = Math.ceil(this.min);
+//         let max = Math.floor(this.max);
+//         for (let i = 0; i < 15; i++){
+//             const custPH = Math.floor(Math.random() * (max - min + 1)) + min;
+//             const cookPH = Math.round(custPH * avg);
+//             this.hourly.push (cookPH);
+//         }
+//     },
+//     totalCookies: function () {
+//         let total = 0;
+//         for (let J = 0; j < 15; j++){
+//         total = total + this.hourly[j];
+//         }
+//     this.hourly.push(total);
+//     },
+//     makeCookies: function (){
+//         for (let i = 0; i < this.hourly.length; i++ ) {
+//             const list = document.getElementById('stJohns');
+//             const li = lcation.creatElement('li');
+//             li.textcontent =  hourly[i] + this.hr[] + ' cookies.';
+//             list.appendChild(li);
+//         }
+//     }
+// };
+
+// const waterfront = {
+//     location: 'waterfront',
+//     min: 2,
+//     max: 16,
+//     avg: 4.6,
+//     hourly:[],
+//     random: function () {
+//         let min = Math.ceil(this.min);
+//         let max = Math.floor(this.max);
+//         for (let i = 0; i < 15; i++){
+//             const custPH = Math.floor(Math.random() * (max - min + 1)) + min;
+//             const cookPH = Math.round(custPH * avg);
+//             this.hourly.push (cookPH);
+//         }
+//     },
+
+//     totalCookies: function () {
+//         let total = 0;
+//         for (let J = 0; j < 15; j++){
+//         total = total + this.hourly[j];
+//         }
+//     this.hourly.push(total);
+//     },
+
+//     makeCookies: function (){
+//         for (let i = 0; i < this.hourly.length; i++ ) {
+//             const list = document.getElementById('waterfront');
+//             const li = lcation.creatElement('li');
+//             li.textcontent =  hourly[i] + this.hr[] + ' cookies.';
+//             list.appendChild(li);
+//         }
+//     }
+// };
