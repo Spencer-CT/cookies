@@ -43,58 +43,54 @@ function CookieStore (location, min, max, avg, timeArray) {
     this.answer = null
 }
 const pdxCookie = new CookieStore ('pdx', 23, 65, 6.3, []);
-CookieStore.ask();
-CookieStore.render();
 const pioneerCookie = new CookieStore ('pSquare', 3, 24, 1.2, []);
-pioneerCookie.ask();
-pioneerCookie.render();
 const powellsCookie = new CookieStore ('powells', 11, 38, 1.7, []);
-powellsCookie.ask();
-powellsCookie.render();
 const stJohnsCookie = new CookieStore ('stJohns', 20, 38, 2.3, []);
-stJohnsCookie.ask();
-stJohnsCookie.render();
 const waterfrontCookie = new CookieStore ('waterfront', 20, 38, 2.3, []);
-waterfrontCookie.ask();
-waterfrontCookie.render();
 
 CookieStore.prototype.ask = function () {
-    this.answer = prompt(this.text);
-    this.render();
+    console.log(this.location);
+};
+pdxCookie.ask();
+pioneerCookie.ask();
+powellsCookie.ask();
+stJohnsCookie.ask();
+waterfrontCookie.ask();
+
+
+CookieStore.prototype.ask = function () {
+    console.log(this.min);
+};
+pdxCookie.ask();
+pioneerCookie.ask();
+powellsCookie.ask();
+stJohnsCookie.ask();
+waterfrontCookie.ask();
+
+CookieStore.prototype.ask = function () {
+    console.log(this.max);
+};
+pdxCookie.ask();
+pioneerCookie.ask();
+powellsCookie.ask();
+stJohnsCookie.ask();
+waterfrontCookie.ask();
+
+CookieStore.prototype.ask = function () {
+    console.log(this.avg);
+};
+pdxCookie.ask();
+pioneerCookie.ask();
+powellsCookie.ask();
+stJohnsCookie.ask();
+waterfrontCookie.ask();
+
+CookieStore.prototype.ask = function () {
+    console.log(this.timeArray);
 };
 
-Question.prototype.render = function (){
-    const ele = doctumemt.getElementById(this.parrentId);
-    const p = document.createElement('p');
-}
-
-
-const pSquare = {
-    location: 'pSquare',
-    min: 3,
-    max: 24,
-    avg: 1.2,
-    timeArray:[]
-};
-const powells = {
-    location: 'powells',
-    min: 11,
-    max: 38,
-    avg: 1.7,
-    timeArray:[]
-};
-const stJohns = {
-    location: 'stJohns',
-    min: 20,
-    max: 38,
-    avg: 2.3,
-    timeArray:[]
-};
-
-const waterfront = {
-    location: 'waterfront',
-    min: 2,
-    max: 16,
-    avg: 4.6,
-    timeArray:[]
-};
+pdxCookie.ask();
+pioneerCookie.ask();
+powellsCookie.ask();
+stJohnsCookie.ask();
+waterfrontCookie.ask();
