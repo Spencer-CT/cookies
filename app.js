@@ -33,6 +33,14 @@ const pdx = {
         },
 };
 
+CookieStore.prototype.makeCookies = function () {
+    const list = document.getElementById('pdx');
+    const li = document.createElement('li');
+    li.textContent = hr[i] + this.timeArray[i] + ' cookies.';
+    list.appendChild(li);
+    console.log(li);
+}
+
 function CookieStore (location, min, max, avg, timeArray) {
     this.location = location;
     this.min = min;
@@ -41,56 +49,10 @@ function CookieStore (location, min, max, avg, timeArray) {
     this.timeArray = timeArray;
 
     this.answer = null
-}
-const pdxCookie = new CookieStore ('pdx', 23, 65, 6.3, []);
-const pioneerCookie = new CookieStore ('pSquare', 3, 24, 1.2, []);
-const powellsCookie = new CookieStore ('powells', 11, 38, 1.7, []);
-const stJohnsCookie = new CookieStore ('stJohns', 20, 38, 2.3, []);
-const waterfrontCookie = new CookieStore ('waterfront', 20, 38, 2.3, []);
 
-CookieStore.prototype.ask = function () {
-    console.log(this.location);
+    const pdxCookie = new CookieStore ('pdx', 23, 65, 6.3, []);
+    const pioneerCookie = new CookieStore ('pSquare', 3, 24, 1.2, []);
+    const powellsCookie = new CookieStore ('powells', 11, 38, 1.7, []);
+    const stJohnsCookie = new CookieStore ('stJohns', 20, 38, 2.3, []);
+    const waterfrontCookie = new CookieStore ('waterfront', 20, 38, 2.3, []);
 };
-pdxCookie.ask();
-pioneerCookie.ask();
-powellsCookie.ask();
-stJohnsCookie.ask();
-waterfrontCookie.ask();
-
-
-CookieStore.prototype.ask = function () {
-    console.log(this.min);
-};
-pdxCookie.ask();
-pioneerCookie.ask();
-powellsCookie.ask();
-stJohnsCookie.ask();
-waterfrontCookie.ask();
-
-CookieStore.prototype.ask = function () {
-    console.log(this.max);
-};
-pdxCookie.ask();
-pioneerCookie.ask();
-powellsCookie.ask();
-stJohnsCookie.ask();
-waterfrontCookie.ask();
-
-CookieStore.prototype.ask = function () {
-    console.log(this.avg);
-};
-pdxCookie.ask();
-pioneerCookie.ask();
-powellsCookie.ask();
-stJohnsCookie.ask();
-waterfrontCookie.ask();
-
-CookieStore.prototype.ask = function () {
-    console.log(this.timeArray);
-};
-
-pdxCookie.ask();
-pioneerCookie.ask();
-powellsCookie.ask();
-stJohnsCookie.ask();
-waterfrontCookie.ask();
