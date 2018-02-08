@@ -43,8 +43,8 @@ function CookieStore (location, min, max, avg, timeArray) {
     this.answer = null
 }
 const pdxCookie = new CookieStore ('pdx', 23, 65, 6.3, []);
-pdxCookie.ask();
-pdxCookie.render();
+CookieStore.ask();
+CookieStore.render();
 const pioneerCookie = new CookieStore ('pSquare', 3, 24, 1.2, []);
 pioneerCookie.ask();
 pioneerCookie.render();
@@ -57,6 +57,16 @@ stJohnsCookie.render();
 const waterfrontCookie = new CookieStore ('waterfront', 20, 38, 2.3, []);
 waterfrontCookie.ask();
 waterfrontCookie.render();
+
+CookieStore.prototype.ask = function () {
+    this.answer = prompt(this.text);
+    this.render();
+};
+
+Question.prototype.render = function (){
+    const ele = doctumemt.getElementById(this.parrentId);
+    const p = document.createElement('p');
+}
 
 
 const pSquare = {
