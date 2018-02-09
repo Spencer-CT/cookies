@@ -9,38 +9,6 @@ function CookieStore (location, min, max, avg, timeArray) {
 
     this.answer = null
 };
-// const pdx = {
-//     location: 'pdx',
-//     min: 23,
-//     max: 65,
-//     avg: 6.3,
-//     timeArray:[],
-//         random: function () {
-//             let min = Math.ceil(this.min);
-//             let max = Math.floor(this.max);
-//             for (let i = 0; i < 15; i++){
-//             const custPH = Math.floor(Math.random() * (max - min + 1)) + min;
-//             const cookPH = Math.round(custPH * this.avg);
-//             this.timeArray.push (cookPH);
-//             }
-//         },
-//         totalCookies: function () {
-//             let total = 0;
-//             for (let j = 0; j < 15; j++){
-//             total = total + this.timeArray[j];
-//             }
-//         this.timeArray.push(total);
-//         },
-//         makeCookies: function () {
-//             for (let i = 0; i < this.timeArray.length; i++ ) {
-//                 const list = document.getElementById('pdx');
-//                 const li = document.createElement('li');
-//                 li.textContent = hr[i] + this.timeArray[i] + ' cookies.';
-//                 list.appendChild(li);
-//                 console.log(li);
-//             }
-//         },
-// };
 
 const pdxCookie = new CookieStore ('pdx', 23, 65, 6.3, []);
 const pioneerCookie = new CookieStore ('pSquare', 3, 24, 1.2, []);
