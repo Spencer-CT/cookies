@@ -68,6 +68,7 @@ const pSquare = {
             li.textContent = hr[i] + this.timeArray[i] + ' cookies.';
             list.appendChild(li);
             console.log(li);
+            //re commit to objects branch
         }
     },
 };
