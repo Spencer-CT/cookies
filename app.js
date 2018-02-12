@@ -45,5 +45,3 @@ pioneerCookie.makeCookies();
 powellsCookie.makeCookies();
 stJohnsCookie.makeCookies();
 waterfrontCookie.makeCookies();
-
-//some change
